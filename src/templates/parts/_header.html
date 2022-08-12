@@ -1,1 +1,27 @@
-<header class="main-header"></header>
+<header class="main-header">
+    <a href="index.html" class="main-header--logolink">
+        {% include 'parts/svgo/logo-ofpery.svg' %}
+    </a>
+    <nav class="main-header--nav nav">
+        {% set linksMenu = [
+        {
+            link: 'index.html',
+            text: 'Главная'
+        },
+        {
+            link: 'schedule.html',
+            text: 'Расписание'
+        },
+        {
+            link: 'prices.html',
+            text: 'Цены'
+        }
+        ] 
+        %}
+        {% for link in linksMenu %}
+        <li>
+            <a href="{{ link.link }}" class="nav--link">{{ link.text }}</a>
+        </li>
+        {% endfor %}
+    </nav>
+</header>
